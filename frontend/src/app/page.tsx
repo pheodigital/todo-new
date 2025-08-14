@@ -1,5 +1,5 @@
-import { api } from "@/lib/fetcher";
-import { createTodo, toggleTodo, deleteTodo } from "./actions";
+import { api } from "./lib/fetcher";
+import { createTodo, toggleTodo, deleteTodo } from "./action";
 
 type Todo = {
   id: string;
@@ -8,7 +8,7 @@ type Todo = {
 };
 
 async function getTodos(): Promise<Todo[]> {
-  return api("/api/todos");
+  return api("/backend/todos");
 }
 
 export default async function Page() {
